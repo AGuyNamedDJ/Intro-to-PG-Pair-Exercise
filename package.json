@@ -1,0 +1,26 @@
+{
+  "name": "intro-to-pg-pair-exercise",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DJRobertson95/Intro-to-PG-Pair-Exercise.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DJRobertson95/Intro-to-PG-Pair-Exercise/issues"
+  },
+  "homepage": "https://github.com/DJRobertson95/Intro-to-PG-Pair-Exercise#readme",
+  "dependencies": {
+    "pg": "^8.8.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
