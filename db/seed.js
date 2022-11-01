@@ -7,17 +7,16 @@ const {client} = require("./index");
     // Write asynchronous fn that are able to run SQL queries and interact with db
 async function addNewTVShow() {
     try {
-        // Step 2a: Write client query that will interact with db 
-            // Method querry allows us to write SQL queries directly into VScode
-        await client.query(`
-            CREATE TABLE foods(
-                id SERIAL,
-                name VARCHAR(255) NOT NULL,
-                price NUMBERIC DEFAULT 0,
-                description TEXT DEFAULT 'no text'
-            );
-        `)
+        // In order for our client to actually be able to interact with our database, we have to actually connect our client using the .connect() method
+        client.connect();
+        const { rows } = await client.query(`
+            INSERT INTO TVShows("Breaking Bad", "Crime Drama", 2008, 2013)
+            VALUES ($1, $2, $3)
+            RETURNING *;
+        `, [name, description, yearStarted, yearEnded])
+        console.log("Results of adding new tvShow: ", rows); 
     } catch (error) {
-        console.log(error);
+        console.log(error); 
     }
 }
+
