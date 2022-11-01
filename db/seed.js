@@ -11,12 +11,20 @@ async function addNewTVShow() {
         client.connect();
         const { rows } = await client.query(`
             INSERT INTO TVShows("Breaking Bad", "Crime Drama", 2008, 2013)
-            VALUES ($1, $2, $3)
+            VALUES ($1, $2, $3, $4)
             RETURNING *;
         `, [name, description, yearStarted, yearEnded])
         console.log("Results of adding new tvShow: ", rows); 
     } catch (error) {
         console.log(error); 
+    }
+}
+
+async function fetchTVShowData() {
+    try {
+        await client.querry()
+    } catch (error) {
+        console.log(error);     
     }
 }
 
